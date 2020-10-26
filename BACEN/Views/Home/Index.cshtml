@@ -1,0 +1,19 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+@using (Ajax.BeginForm("Planilha", "Plan", 
+                       new AjaxOptions {HttpMethod="POST", UpdateTargetId="DivId"}))
+{
+<div>
+    <div><input id="arquivo" name="arquivo" type="file"></div>
+    <div><button type="submit">Importar</button></div>
+</div>
+<div id="DivId"></div>
+}
+
+<script>
+    function SuccessCreate(data) {
+        console.log(data);       
+    }
+</script>

@@ -1,0 +1,54 @@
+﻿@model List<BACENModel.Bank>
+
+@{
+    ViewBag.Title = "Planilha";
+}
+
+<h2>Aguardando aprovação Banco Votorantim</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+@foreach (var item in Model)
+{
+    if (item.Status == 1)
+    {
+        <h3>NOVOS</h3>
+        break;
+    }
+}
+
+@foreach (var item in Model)
+{
+    
+        if (item.Status == 1)
+        {
+
+        <div><div>@item.Codigo</div><div>@item.Name</div>
+        </div>
+        }   
+}
+
+@foreach (var item in Model)
+{
+    if (item.Status == 2)
+    {
+        <h3>EXCLUÍDOS</h3>        
+        break;
+    }
+}
+
+@foreach (var item in Model)
+{
+    
+        if (item.Status == 2)
+        {
+
+        <div>
+            <div>@item.Codigo</div>
+            <div>@item.Name</div>
+        </div>
+        }
+  
+}
