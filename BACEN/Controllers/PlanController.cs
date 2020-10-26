@@ -18,7 +18,7 @@ namespace BACEN.Controllers
         public ActionResult Planilha(string arquivo)
         {
             PlanilhaBusiness plan = new PlanilhaBusiness();
-            List<Bank> model = new List<Bank>(); 
+            List<Bank> model; 
             model = plan.GetDataFromFile(arquivo); 
            
 
